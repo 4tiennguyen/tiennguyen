@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hello, there! on Home</title>
+    <link>https://4tiennguyen.github.io/tiennguyen/</link>
+    <description>Recent content in Hello, there! on Home</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 11 Jan 2020 10:58:08 -0400</lastBuildDate><atom:link href="https://4tiennguyen.github.io/tiennguyen/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Random Stories </title>
+      <link>https://4tiennguyen.github.io/tiennguyen/blog/random_thought/</link>
+      <pubDate>Sun, 10 Jan 2021 11:00:59 -0400</pubDate>
+      
+      <guid>https://4tiennguyen.github.io/tiennguyen/blog/random_thought/</guid>
+      <description>I was given a google mini home, so I named some of my devices like:
+ Bedroom light&amp;rsquo;s name is Sushi 🍣 My small heater&amp;rsquo;s name is Banana 🍌 Another bedroom light&amp;rsquo;s name is BBQ 🍖 My diffuser&amp;rsquo;s name is Pinky The sleeping light&amp;rsquo;s name is Toroto
+So I can say &amp;ldquo;Hey Google, turn on Sushi&amp;rdquo;   I just added a command to my Google home.
+Me: &amp;ldquo;Hey Google, who is the most beautiful girl in the world ?</description>
+    </item>
+    
+    <item>
+      <title>Tips </title>
+      <link>https://4tiennguyen.github.io/tiennguyen/blog/tips/</link>
+      <pubDate>Sun, 10 Jan 2021 11:00:59 -0400</pubDate>
+      
+      <guid>https://4tiennguyen.github.io/tiennguyen/blog/tips/</guid>
+      <description> in Python, it&amp;rsquo;s a good practice to typecast categorical features to a category dtype because they make the operations on such columns much faster than the object dtype.  </description>
+    </item>
+    
+    <item>
+      <title>Project 2: The Battle of Neighborhoods</title>
+      <link>https://4tiennguyen.github.io/tiennguyen/post/chapter-2/</link>
+      <pubDate>Tue, 10 Nov 2020 11:00:59 -0400</pubDate>
+      
+      <guid>https://4tiennguyen.github.io/tiennguyen/post/chapter-2/</guid>
+      <description>I took the IBM Data Science courses on Coursera. This is the capstone project for the IBM Data Science certification. This project requires me to come up with an idea to leverage the Foursquare location data to explore or compare neighborhoods or cities of your choice or to come up with a problem that you can use the Foursquare location data to solve.
+I want to know if in Los Angeles, if someone is looking to open a coffee shop, where would I recommend that they open it?</description>
+    </item>
+    
+    <item>
+      <title>Wanna see my DIY? </title>
+      <link>https://4tiennguyen.github.io/tiennguyen/blog/diy/</link>
+      <pubDate>Tue, 10 Nov 2020 11:00:59 -0400</pubDate>
+      
+      <guid>https://4tiennguyen.github.io/tiennguyen/blog/diy/</guid>
+      <description>This is where I will show all of the things I made since I came to U.S.
+  The wallet
+I got a lot of compliments.     The chair
+After spending money buy a desk, I used its box and a duck tap to make a chair. Luckily, it lasts all year.     The makeup organizer
+    </description>
+    </item>
+    
+    <item>
+      <title>Project 1: Book Rating Prediction</title>
+      <link>https://4tiennguyen.github.io/tiennguyen/post/chapter-1/</link>
+      <pubDate>Mon, 15 Jun 2020 10:58:08 -0400</pubDate>
+      
+      <guid>https://4tiennguyen.github.io/tiennguyen/post/chapter-1/</guid>
+      <description>This is my Capstone project. I and my teammate were curious about how differently the Goodreads and Amazon users review a book, so below we
+ Obtained and clean large Amazon and Goodreads datasets. Utilized multiprocessing to maximize CPU utilization to drastically speed up the cleaning process by 100 times. Utilized EDA to explore the characteristics of the datasets and to choose suitable algorithms for the datasets. Utilized Latent Dirichlet allocation (LDA) to improve the accuracy of the predictions.</description>
+    </item>
+    
+    <item>
+      <title>Datacamp projects</title>
+      <link>https://4tiennguyen.github.io/tiennguyen/post/chapter-3/</link>
+      <pubDate>Wed, 01 Jan 2020 10:58:08 -0400</pubDate>
+      
+      <guid>https://4tiennguyen.github.io/tiennguyen/post/chapter-3/</guid>
+      <description>   Project Task     &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash; &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash;   Analyzing Police Activity Analyzing some impacts on police behavior   &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash; &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash;   Predicting Credit Card Approvals Building an automatic credit card approval predictor using machine learning techniques, just like the real banks do    </description>
+    </item>
+    
+    <item>
+      <title>Project #: coming</title>
+      <link>https://4tiennguyen.github.io/tiennguyen/post/chapter-6/</link>
+      <pubDate>Fri, 14 Apr 2017 11:25:05 -0400</pubDate>
+      
+      <guid>https://4tiennguyen.github.io/tiennguyen/post/chapter-6/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Project #: coming</title>
+      <link>https://4tiennguyen.github.io/tiennguyen/post/chapter-5/</link>
+      <pubDate>Thu, 13 Apr 2017 11:15:58 -0400</pubDate>
+      
+      <guid>https://4tiennguyen.github.io/tiennguyen/post/chapter-5/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Project #: comming</title>
+      <link>https://4tiennguyen.github.io/tiennguyen/post/chapter-4/</link>
+      <pubDate>Wed, 12 Apr 2017 11:14:48 -0400</pubDate>
+      
+      <guid>https://4tiennguyen.github.io/tiennguyen/post/chapter-4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Contact</title>
+      <link>https://4tiennguyen.github.io/tiennguyen/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://4tiennguyen.github.io/tiennguyen/contact/</guid>
+      <description> Your Name Email Address An email address is required.  Message  </description>
+    </item>
+    
+  </channel>
+</rss>

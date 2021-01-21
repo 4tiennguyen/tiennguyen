@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on Home</title>
+    <link>https://4tiennguyen.github.io/tiennguyen/blog/</link>
+    <description>Recent content in Blog on Home</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 10 Jan 2021 11:00:59 -0400</lastBuildDate><atom:link href="https://4tiennguyen.github.io/tiennguyen/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Random Stories </title>
+      <link>https://4tiennguyen.github.io/tiennguyen/blog/random_thought/</link>
+      <pubDate>Sun, 10 Jan 2021 11:00:59 -0400</pubDate>
+      
+      <guid>https://4tiennguyen.github.io/tiennguyen/blog/random_thought/</guid>
+      <description>I was given a google mini home, so I named some of my devices like:
+ Bedroom light&amp;rsquo;s name is Sushi 🍣 My small heater&amp;rsquo;s name is Banana 🍌 Another bedroom light&amp;rsquo;s name is BBQ 🍖 My diffuser&amp;rsquo;s name is Pinky The sleeping light&amp;rsquo;s name is Toroto
+So I can say &amp;ldquo;Hey Google, turn on Sushi&amp;rdquo;   I just added a command to my Google home.
+Me: &amp;ldquo;Hey Google, who is the most beautiful girl in the world ?</description>
+    </item>
+    
+    <item>
+      <title>Tips </title>
+      <link>https://4tiennguyen.github.io/tiennguyen/blog/tips/</link>
+      <pubDate>Sun, 10 Jan 2021 11:00:59 -0400</pubDate>
+      
+      <guid>https://4tiennguyen.github.io/tiennguyen/blog/tips/</guid>
+      <description> in Python, it&amp;rsquo;s a good practice to typecast categorical features to a category dtype because they make the operations on such columns much faster than the object dtype.  </description>
+    </item>
+    
+    <item>
+      <title>Wanna see my DIY? </title>
+      <link>https://4tiennguyen.github.io/tiennguyen/blog/diy/</link>
+      <pubDate>Tue, 10 Nov 2020 11:00:59 -0400</pubDate>
+      
+      <guid>https://4tiennguyen.github.io/tiennguyen/blog/diy/</guid>
+      <description>This is where I will show all of the things I made since I came to U.S.
+  The wallet
+I got a lot of compliments.     The chair
+After spending money buy a desk, I used its box and a duck tap to make a chair. Luckily, it lasts all year.     The makeup organizer
+    </description>
+    </item>
+    
+  </channel>
+</rss>
