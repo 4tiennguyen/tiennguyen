@@ -280,12 +280,12 @@ A solution we came up with was to use multiprocessing as following :</p>
 <h4 id="final-data-description">Final Data Description</h4>
 <p>The Goodreads reviews dataset has 906,876 reviews. For each review, the data consist of user rating, user review time, book’s ASIN/ISBN, word count before cleaning, word count after cleaning, raw review text (i.e. comment), and processed review text. Note that the user ratings, user review times, book’s ASIN/ISBN, and user comments are the data in the website, while the other metadata is processed by us.
 <figure>
-    <img src="/images/project1_gr1.jpg"/> 
+    <img src="/tiennguyen/images/project1_gr1.jpg"/> 
 </figure>
 </p>
 <p>The Goodreads book metadata dataset has 37,233 rows and 21 columns, where each row consists of the book’s ASIN/ISBN, number of ratings, number of pages, and many other data as listed by Goodreads. This dataset has both categorical (ASIN, publisher, format, description, genres) and numerical variables (the rest of the columns).<br>
 <figure>
-    <img src="/images/project1_gr2.jpg"/> 
+    <img src="/tiennguyen/images/project1_gr2.jpg"/> 
 </figure>
 </p>
 <p>The Amazon reviews dataset has 5,683,680 reviews. Like the Goodreads reviews dataset, Amazon data being saved includes the rating, review time, ASIN/ISBN, word count before cleaning, word count after cleaning, raw review text, and processed review text.</p>
@@ -294,7 +294,7 @@ A solution we came up with was to use multiprocessing as following :</p>
 <p>We used Vader library to classify reviews into 3 categories: positive, negative and neutral reviews. Vader handles emojis, slangs and emoticons. That’s why we didn’t filter emojis and some punctuation in the cleaning text part.</p>
 <p>As we can see from the graphs, the distribution of the sentiment labels are nearly identical. For both Goodreads and Amazon, there are a lot of more positive reviews than negative reviews, and only about 5% of the reviews are neutral for both datasets. However, we detected a few outlier examples of the labels. For example, there are about 5% of the Amazon reviews that are classified as positive reviews have a rating of smaller than 3 out of 5. That of the Goodreads dataset is 10%.
 <figure>
-    <img src="/images/project1_sentiment1.jpg"/> 
+    <img src="/tiennguyen/images/project1_sentiment1.jpg"/> 
 </figure>
 </p>
 <p>As we can see, these are the top 50 trigram words in the both dataset. Some trigrams like highly_recommend_book, woud_recommend_book both appear in the two dataset.</p>
@@ -302,15 +302,15 @@ A solution we came up with was to use multiprocessing as following :</p>
     <img src="/images/project1_sentiment2.jpg"/> 
 </figure>
  <figure>
-    <img src="/images/project1_sentiment4.jpg"/> 
+    <img src="/tiennguyen/images/project1_sentiment4.jpg"/> 
 </figure>
 </p>
 <p>For negative reviews, we see some negative words like would_not_recommend or not_recommended_book. However, we also see some trigram seem to be positive such as recommend_book_anyone or look_forward_word but these are just trigram words, we don’t know if there is a negation word like ‘not’  in front of them.</p>
 <p><figure>
-    <img src="/images/project1_sentiment3.jpg"/> 
+    <img src="/tiennguyen/images/project1_sentiment3.jpg"/> 
 </figure>
  <figure>
-    <img src="/images/project1_sentiment5.jpg"/> 
+    <img src="/tiennguyen/images/project1_sentiment5.jpg"/> 
 </figure>
 </p>
 <p>Overall, the graphs make sense, except for a few outliers.
@@ -318,7 +318,7 @@ One interesting example is that, for both the top negative and positive trigrams
 <h1 id="exploratory-data-analysis">Exploratory data analysis</h1>
 <p>To find the difference in ratings, we subtracted Goodreads’s average rating from Amazon’s average rating for each book. The average rating difference is around 0.4, meaning on average Amazon’s ratings is approximately half a star more than that of Goodreads.
 <figure>
-    <img src="/images/project1_eda1.jpg"/> 
+    <img src="/tiennguyen/images/project1_eda1.jpg"/> 
 </figure>
 </p>
 <h1 id="data-modeling">Data Modeling</h1>
@@ -339,7 +339,7 @@ One interesting example is that, for both the top negative and positive trigrams
 <p>There are many methods to calculate the coherence score. The most reliable method is to use supervised labels that are labelled by humans; however, those labels are rare and hard and expensive to obtain. Luckily , there are many other methods to calculate coherence score, including UCI coherence score, UMass coherence score, and CV coherence score. CV coherence score is shown to be the most reliable, meaning it achieves the highest correlation to between its ranking and human ranked topics. Therefore, we chose to use the CV coherence score in our evaluation.</p>
 <p>LDA requires the number of topics as an input. In order to find the optimal number of topics, we performed a parameter search on a range of numbers, and evaluated each of LDA models using the coherence score. A topic is said to be coherent when its top words having high scores share a high degree of semantic similarity. Technically, the LDA model will put a weight for each of N words for all topics, and the coherence score measures the sum of the similarity measurement between the semantic interpretability and those weights. The higher the CV coherence score is, the better the quality of topics. We ran the LDA model with various numbers of topics and chose the smallest number of topics that achieves the best coherence score (i.e. the elbow method).</p>
 <figure>
-    <img src="/images/project1_lda1.jpg"/> 
+    <img src="/tiennguyen/images/project1_lda1.jpg"/> 
 </figure>
 
 <p>The optimal number of topics is 35, which has the highest score of  0.3667. Like the other tables, the LDA table has the ASIN feature along with 35 proportion topics features ( eg: prop_topic_1, prop_topic_2, etc.). We merged this table with the metadata table through ASIN.</p>
@@ -380,14 +380,14 @@ One interesting example is that, for both the top negative and positive trigrams
 </table>
 <p>Without text features, we found that Xgboost got the best test error rates, with MSE around 0.09. Followed by Random Forest and Neural Network.
 <figure>
-    <img src="/images/project1_model1.jpg"/> 
+    <img src="/tiennguyen/images/project1_model1.jpg"/> 
 </figure>
 
 Although the test error of NN is slightly worse than that of RF, we thought RF performed much better since the train errors were much closer to the test errors, which meant the model was not overfitting. Like the models above, we decided to add more features from LDA in order to get better results.</p>
 <p>We incorporated the 35 LDA features into the model using both Goodreads and Amazon metadata. The features significantly improved our model performance.
 The graph on the left illustrates the different error metrics evaluated on 3 different algorithms for this model: RF, XGB, and NN. Among the metrics, XGB consistently has a lower test error rate than the other two as well as has the highest adjusted R2 value. On the other hand, NN always has the worst test errors and R2 values regardless of metrics. Therefore, XGB is the best algorithm for the model that uses Goodreads and Amazon features to predict rating differences.
 <figure>
-    <img src="/images/project1_model2.jpg"/> 
+    <img src="/tiennguyen/images/project1_model2.jpg"/> 
 </figure>
 </p>
 <p>Despite being the best algorithm, XGB test error is still high.

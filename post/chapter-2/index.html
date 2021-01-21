@@ -243,12 +243,12 @@ I want to know if in Los Angeles, if someone is looking to open a coffee shop, w
 <p>There are two datasets in the project: neighborhoods in Los Angeles dataset and Foursquare venue dataset. The neighborhoods in Los Angeles dataset is scrapped directly from the Wikipedia website while the Foursquare venue dataset is crawled directly from Foursquare API.</p>
 <p>To get the neighborhoods in Los Angeles, we used the BeautifulSoup package to scrape the Wikipedia website and then parsed the geographical coordinates of the neighborhoods using the neighborhood Wikipedia pages along with the Python Geocoder package which would give us the latitude and longitude coordinates of the neighborhoods. As a result, the Los Angeles dataset has 190 neighborhoods. For each neighborhood, the data consists of the neighborhood&rsquo;s latitude and longitude.<br>
 <figure>
-    <img src="/images/project2_data1.jpg"/> 
+    <img src="/tiennguyen/images/project2_data1.jpg"/> 
 </figure>
 </p>
 <p>After having the neighborhood&rsquo;s latitude and longitude data, we passed them to Foursquare API to get the top 100 venues that were within a radius of 2000 meters for those neighborhoods. As a result, the Foursquare venue dataset has 16909 observations where each observation consists of neighborhood latitude, neighborhood longitude, venue, and venue category.
 <figure>
-    <img src="/images/project2_data2.jpg"/> 
+    <img src="/tiennguyen/images/project2_data2.jpg"/> 
 </figure>
 </p>
 <p>In addition to the locality, the population in a neighborhood also plays an essential role in the decision of opening a new coffee shop. However, there is no such service providing the population of each neighborhood. Therefore, we assume that the more venues of a neighborhood, the more residents living there. After that, we classified the population into three categories depending on the number of venues that each neighborhood has as follows,</p>
@@ -257,48 +257,48 @@ I want to know if in Los Angeles, if someone is looking to open a coffee shop, w
 <li>Medium population: the number of venues between 21 and 100 (exclusive)</li>
 <li>Large population: the number of venues of 100 or more
 <figure>
-    <img src="/images/project2_data3.jpg"/> 
+    <img src="/tiennguyen/images/project2_data3.jpg"/> 
 </figure>
 </li>
 </ul>
 <p>From the 3 tables above, the geographical coordinates are used to plot the map of Los Angeles with the neighborhoods while venue data is used to perform clustering on the neighborhoods. The number of coffee shops in each neighborhood is one of the most important features in the model. However, we don&rsquo;t want to set up a new coffee shop in a neighborhood that has a lot of coffee shops but less population. Therefore, we calculate the percent of coffee shops located in each neighborhood.</p>
 <p>One more thing we should consider before calculating the percent of coffee shops located in each neighborhood is that we need to change all categories that are synonyms of Coffee to Coffee Shop such as “Café”.
 <figure>
-    <img src="/images/project2_data4.jpg"/> 
+    <img src="/tiennguyen/images/project2_data4.jpg"/> 
 </figure>
 
 <figure>
-    <img src="/images/project2_data5.jpg"/> 
+    <img src="/tiennguyen/images/project2_data5.jpg"/> 
 </figure>
 </p>
 <h1 id="methodology">Methodology</h1>
 <h3 id="exploratory-data-analysis">Exploratory data analysis</h3>
 <p>Before doing anything, let’s visualize a map of Los Angeles with neighborhoods superimposed on top.
 <figure>
-    <img src="/images/project2_eda1.jpg"/> 
+    <img src="/tiennguyen/images/project2_eda1.jpg"/> 
 </figure>
 
 There are about 416 unique venue categories in Los Angeles and coffee shops are at the top of the charts as we can see in the plot below. It’s about 1.5 times the second most common venue category (Mexican Restaurant) in Los Angeles areas.
 <figure>
-    <img src="/images/project2_eda2.jpg"/> 
+    <img src="/tiennguyen/images/project2_eda2.jpg"/> 
 </figure>
 
 The top 10 neighborhoods with the most number of coffee shops are shown in the bar chart below
 <figure>
-    <img src="/images/project2_eda3.jpg"/> 
+    <img src="/tiennguyen/images/project2_eda3.jpg"/> 
 </figure>
 </p>
 <p>Edendale, which has 15 coffee shops, is the neighborhood that has the most number of coffee shops. Among the top 10 positions, Historic Filipinotown, Franklin Hills, Hancock Park, and Melrose Hill have the same number of coffee houses.</p>
 <p>Next, let visualize the bar chart about the population classification.
 <figure>
-    <img src="/images/project2_eda4.jpg"/> 
+    <img src="/tiennguyen/images/project2_eda4.jpg"/> 
 </figure>
 
 About 18 neighborhoods are having fewer than 60 venues which are considered a low population while there are about 110 neighborhoods that have more than 100 venues which implies that these neighborhoods have many residents.</p>
 <h3 id="clustering-model">Clustering model</h3>
 <p>We performed K-mean clustering with the feature “Percent” in the table shown in figure 5 to cluster the neighborhood. K-mean algorithm is one of the most common cluster methods of unsupervised learning. To specify the number of clusters K, we used the elbow method.
 <figure>
-    <img src="/images/project2_eda5.jpg"/> 
+    <img src="/tiennguyen/images/project2_eda5.jpg"/> 
 </figure>
 
 We see that a good K to use in our model would be 3. We use the K-means algorithm in the sklearn library to fit clusters to our data.</p>
@@ -323,12 +323,12 @@ We see that a good K to use in our model would be 3. We use the K-means algorith
 <h1 id="discussion">Discussion</h1>
 <p>The moderate and high percent number of coffee shops are concentrated in the center of Los Angeles. Cluster 1 (blue) has a very low percentage of coffee shops. This represents a great opportunity and high potential location to open a new coffee shop because there is very little to no competition to open a new coffee shop. As mentioned, the neighborhoods that have more than 100 venues are considered as large populations. From the graph below, we see that Reseda is a good neighborhood to set up a new coffee shop as it only has one coffee shop but it has a large population.
 <figure>
-    <img src="/images/project2_result2.jpg"/> 
+    <img src="/tiennguyen/images/project2_result2.jpg"/> 
 </figure>
 </p>
 <p>Cluster 0 can be chosen to open a new coffee shop if the population is large but the number of coffee shops is not too high (fig 13.) For example, Atwater Village has a large population but only 5 coffee shops.
 <figure>
-    <img src="/images/project2_result3.jpg"/> 
+    <img src="/tiennguyen/images/project2_result3.jpg"/> 
 </figure>
 </p>
 <p>Lastly, neighborhoods in cluster 2 should be avoided setting up a new coffee shop since they already have a high concentration of coffee shops and may suffer from intense competition.</p>
@@ -337,8 +337,8 @@ We see that a good K to use in our model would be 3. We use the K-means algorith
 <p>After fetching data from several data sources, processing them into a clean data frame, and applying the K-means clustering algorithm, we visualized and recommended potential neighborhoods that have a few coffee shops but have a large population. The finding of this project will help our contractors or clients to consider high potential locations while avoiding overcrowded neighborhoods in their decisions to open a new coffee shop.</p>
 <p>Nevertheless, to open a coffee shop, we also need to consider other factors such as the cost of rent, the population of the neighborhood, etc. In this project, we classified the population of each neighborhood based on the number of venues in each neighborhood. Besides, this project made use of the free FourSquare API that came with limitations as to the number of API calls and results returned.  For future work, we can build a better recommendation if we have more fields and more data for our K-means clustering algorithm.</p>
 <h1 id="references">References</h1>
-<p>&ldquo;List Of Districts And Neighborhoods In Los Angeles&rdquo;.En.Wikipedia.Org, 2020, <a href="https://en.wikipedia.org/wiki/List_of_districts_and_neighborhoods_in_Los_Angeles">https://en.wikipedia.org/wiki/List_of_districts_and_neighborhoods_in_Los_Angeles</a>.</p>
-<p>&ldquo;Log In&rdquo;. Foursquare.Com, 2020, <a href="https://foursquare.com/developers/apps">https://foursquare.com/developers/apps</a>.</p>
+<p>&ldquo;List Of Districts And Neighborhoods In Los Angeles&rdquo;.En.Wikipedia.Org, 2020, <a href="https://en.wikipedia.org/wiki/List_of_districts_and_neighborhoods_in_Los_Angeles">https://en.wikipedia.org/wiki/List_of_districts_and_neighborhoods_in_Los_Angeles</a>.
+&ldquo;Log In&rdquo;. Foursquare.Com, 2020, <a href="https://foursquare.com/developers/apps">https://foursquare.com/developers/apps</a>.</p>
 <ul class="pa0">
   
 </ul>
