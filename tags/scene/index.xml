@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>scene on Home</title>
+    <link>https://4tiennguyen.github.io/tiennguyen/tags/scene/</link>
+    <description>Recent content in scene on Home</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://4tiennguyen.github.io/tiennguyen/tags/scene/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Wine Quality Prediction</title>
+      <link>https://4tiennguyen.github.io/tiennguyen/post/chapter-4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://4tiennguyen.github.io/tiennguyen/post/chapter-4/</guid>
+      <description>This is a project I and my teammate did in our Regression Analysis class. We wanted to create a regression model to predict the wine quality of red variants of the Portuguese &amp;ldquo;Vinho Verde&amp;rdquo; wine, so below we
+ Visualized the data to see and understand trends, outliers, and patterns. Checked the assumptions of Linnear Regression models. Built multiple regression models to predict the wine quality. Presented and wrote a report communicating results to non-technical and technical audiences.</description>
+    </item>
+    
+  </channel>
+</rss>

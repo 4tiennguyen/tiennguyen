@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Book Rating Prediction | Home</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content=" Predicting the Difference between Goodreads Ratings and Amazon Ratings.">
+    <meta name="generator" content="Hugo 0.80.0" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/tiennguyen/dist/css/app.4fc0b62e4b82c997bb0041217cd6b979.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="Book Rating Prediction" />
+<meta property="og:description" content=" Predicting the Difference between Goodreads Ratings and Amazon Ratings." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://4tiennguyen.github.io/tiennguyen/post/chapter-1/" />
+<meta property="article:published_time" content="2020-06-15T10:58:08-04:00" />
+<meta property="article:modified_time" content="2020-06-15T10:58:08-04:00" />
+<meta itemprop="name" content="Book Rating Prediction">
+<meta itemprop="description" content=" Predicting the Difference between Goodreads Ratings and Amazon Ratings.">
+<meta itemprop="datePublished" content="2020-06-15T10:58:08-04:00" />
+<meta itemprop="dateModified" content="2020-06-15T10:58:08-04:00" />
+<meta itemprop="wordCount" content="3110">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Book Rating Prediction"/>
+<meta name="twitter:description" content=" Predicting the Difference between Goodreads Ratings and Amazon Ratings."/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  
+  
+  <header class="cover bg-top" style="background-image: url('https://4tiennguyen.github.io/tiennguyen/images/project1_bookcover.jpg');">
+    <div class="pb3-m pb6-l bg-black-60">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/tiennguyen/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Home
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/tiennguyen/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/tiennguyen/resume/" title="Resume page">
+              Resume
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/tiennguyen/post/" title="Projects page">
+              Projects
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/tiennguyen/blog/" title="Blog page">
+              Blog
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/tiennguyen/contact/" title="Contact page">
+              Contact
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+
+
+
+
+<a href="https://www.linkedin.com/in/tien-nguyen-8ba4b81b4/" target="_blank" class="link-transition linkedin link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" rel="noopener" aria-label="follow on LinkedIn——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+<a href="https://github.com/4tiennguyen" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv6 ph3 ph4-ns">
+        
+          <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">Book Rating Prediction</h1>
+          
+            <h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt3 mb4">
+               Predicting the Difference between Goodreads Ratings and Amazon Ratings.
+            </h2>
+          
+        
+      </div>
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        PROJECTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=https://4tiennguyen.github.io/tiennguyen/post/chapter-1/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=https://4tiennguyen.github.io/tiennguyen/post/chapter-1/&amp;text=Book%20Rating%20Prediction" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://4tiennguyen.github.io/tiennguyen/post/chapter-1/&amp;title=Book%20Rating%20Prediction" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Book Rating Prediction</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2020-06-15T10:58:08-04:00">June 15, 2020</time>
+
+      
+      
+        <span class="f6 mv4 dib tracked"> - 15 minutes read</span>
+        <span class="f6 mv4 dib tracked"> - 3110 words</span>
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy avenir bg-near-white f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>This is my Capstone project. I and my teammate were curious about how differently the Goodreads and Amazon users review a book, so below we</p>
+<ul>
+<li>Obtained and clean large Amazon and Goodreads datasets.</li>
+<li>Utilized multiprocessing to maximize CPU utilization to drastically speed up the cleaning process by 100 times.</li>
+<li>Utilized EDA to explore the characteristics of the datasets and to choose suitable algorithms for the datasets.</li>
+<li>Utilized Latent Dirichlet allocation (LDA) to improve the accuracy of the predictions.</li>
+<li>Used various statistical tools and machine learning algorithms to predict the rating differences between the Amazon rating and the Goodreads rating given the user reviews of a book.</li>
+<li>Provided insights and conclusions about the datasets from the results of EDA and machine learning models.</li>
+<li>Wrote a report communicating the results to non-technical and technical audiences.</li>
+</ul>
+<p>To get the full project report, please visit <a href="https://github.com/4tiennguyen/Book_Rating_Prediction/blob/master/complete_project/Final_Project_Report%20.pdf">my github</a>  <br>
+To get the full codes, please visit <a href="https://github.com/4tiennguyen/Book_Rating_Prediction/tree/master/complete_project">my github</a></p>
+<hr>
+<h1 id="introduction">Introduction</h1>
+<p>Goodreads and Amazon are both well-established sources for book reviews where book lovers can reference and decide whether they should purchase a book. But the problem is Goodreads and Amazon have different user base and star rating interpretations, so which site should a user depend on?
+For example, a 3 star rating on Amazon means “it’s okay” whereas a 3 star rating in Goodreads means “liked it.”  The difference in star rating definitions of each site can be seen on the table on the right. We suspect that Amazon might have a lower rating scale because its main interest is to sell books not to provide accurate reviews.
+We hypothesize that Amazon’s lower scale would potentially lead to Amazon books having higher ratings than Goodreads.
+Therefor,  our goal is to predict the difference in ratings between Goodreads and Amazon so that users can have a better idea of a book’s ratings when comparing it between the two platforms</p>
+<h1 id="data">Data</h1>
+<p>There are 4 datasets in our project:</p>
+<ul>
+<li>Amazon reviews</li>
+<li>Amazon metadata</li>
+<li>Goodreads reviews</li>
+<li>Goodreads metadata</li>
+</ul>
+<p>Both Amazon datasets are provided by UCSD’s associate professor.</p>
+<p>Both Goodreads datasets are crawled from Goodreads’ API.</p>
+<p>We collected about <strong>6 millions book reviews</strong> from the two websites <strong>with 37 thousand books</strong>.</p>
+<h4 id="data-cleaning">Data Cleaning</h4>
+<p>For both reviews dataset, we perform text cleaning, which consists of ten steps which are :</p>
+<ul>
+<li>filtering out non English reviews</li>
+<li>removing html tags,</li>
+<li>removing emojis,</li>
+<li>removing extra white space,</li>
+<li>converting texts to lowercase,</li>
+<li>removing numbers,</li>
+<li>expanding contraction,</li>
+<li>removing all punctuation,</li>
+<li>correcting spelling,</li>
+<li>removing all stopwords</li>
+<li>lemmatizing</li>
+</ul>
+<p>Apart from model prediction, we also did sentiment analysis. Text cleaning for both sentiment analysis and model prediction are almost identical. While for model prediction, we removed all of the emojis, punctuation and stopwords, for text sentiment analysis, we didn&rsquo;t remove emojis and we only removed some punctuation and some stopwords. We didn’t remove some negation stop words such as the word “not” or ‘nor’. This is because, for sentiment analysis, positive reviews don’t seem to be affected by the above stop words. However, for negative reviews, the whole meaning of a sentence would be changed if we remove negation stop words.</p>
+<p><strong>Text cleaning</strong>, however, entails a huge overhead. It is slow and highly serial. On our <strong>first experiment</strong>, it took about 20 hrs for only 80 thousand reviews, which means it would <strong>take 62 days, or 9 weeks, to finish all of the reviews.</strong><br>
+A solution we came up with was to use multiprocessing as following :</p>
+<ul>
+<li>Splitting a big review file into 500 files</li>
+<li>using 10 computers with 20 CPU cores each.</li>
+</ul>
+<p>As a result, we <strong>reduced the text cleaning process to 7hrs for all of the review.</strong></p>
+<h4 id="final-data-description">Final Data Description</h4>
+<p>The Goodreads reviews dataset has 906,876 reviews. For each review, the data consist of user rating, user review time, book’s ASIN/ISBN, word count before cleaning, word count after cleaning, raw review text (i.e. comment), and processed review text. Note that the user ratings, user review times, book’s ASIN/ISBN, and user comments are the data in the website, while the other metadata is processed by us.
+<figure>
+    <img src="/tiennguyen/images/project1_gr1.jpg"/> 
+</figure>
+</p>
+<p>The Goodreads book metadata dataset has 37,233 rows and 21 columns, where each row consists of the book’s ASIN/ISBN, number of ratings, number of pages, and many other data as listed by Goodreads. This dataset has both categorical (ASIN, publisher, format, description, genres) and numerical variables (the rest of the columns).<br>
+<figure>
+    <img src="/tiennguyen/images/project1_gr2.jpg"/> 
+</figure>
+</p>
+<p>The Amazon reviews dataset has 5,683,680 reviews. Like the Goodreads reviews dataset, Amazon data being saved includes the rating, review time, ASIN/ISBN, word count before cleaning, word count after cleaning, raw review text, and processed review text.</p>
+<p>The dimension of the Amazon metadata dataset is 37233 rows x 10 columns. Each row contains a book found on both Goodreads and Amazon. Numeric features include ratings, ratings count, reviews count, rank, reviews word counts before cleaning, and reviews word counts after cleaning. Categorical features include genres and book format.</p>
+<h1 id="sentiment-analysis">Sentiment Analysis</h1>
+<p>We used Vader library to classify reviews into 3 categories: positive, negative and neutral reviews. Vader handles emojis, slangs and emoticons. That’s why we didn’t filter emojis and some punctuation in the cleaning text part.</p>
+<p>As we can see from the graphs, the distribution of the sentiment labels are nearly identical. For both Goodreads and Amazon, there are a lot of more positive reviews than negative reviews, and only about 5% of the reviews are neutral for both datasets. However, we detected a few outlier examples of the labels. For example, there are about 5% of the Amazon reviews that are classified as positive reviews have a rating of smaller than 3 out of 5. That of the Goodreads dataset is 10%.
+<figure>
+    <img src="/tiennguyen/images/project1_sentiment1.jpg"/> 
+</figure>
+</p>
+<p>As we can see, these are the top 50 trigram words in the both dataset. Some trigrams like highly_recommend_book, woud_recommend_book both appear in the two dataset.</p>
+<p><figure>
+    <img src="/images/project1_sentiment2.jpg"/> 
+</figure>
+ <figure>
+    <img src="/tiennguyen/images/project1_sentiment4.jpg"/> 
+</figure>
+</p>
+<p>For negative reviews, we see some negative words like would_not_recommend or not_recommended_book. However, we also see some trigram seem to be positive such as recommend_book_anyone or look_forward_word but these are just trigram words, we don’t know if there is a negation word like ‘not’  in front of them.</p>
+<p><figure>
+    <img src="/tiennguyen/images/project1_sentiment3.jpg"/> 
+</figure>
+ <figure>
+    <img src="/tiennguyen/images/project1_sentiment5.jpg"/> 
+</figure>
+</p>
+<p>Overall, the graphs make sense, except for a few outliers.
+One interesting example is that, for both the top negative and positive trigrams of both datasets, the most common trigram is could_not_put. This is an interesting problem to look at because the phrase “could not put” could be in both positive and negative reviews. A positive example is that “could not put this book away”, and a negative example is that “so terrible that I could not put into words”. Trying to do n-grams for n greater than 3 is computationally challenging given the size of the dataset and computing resource we have.</p>
+<h1 id="exploratory-data-analysis">Exploratory data analysis</h1>
+<p>To find the difference in ratings, we subtracted Goodreads’s average rating from Amazon’s average rating for each book. The average rating difference is around 0.4, meaning on average Amazon’s ratings is approximately half a star more than that of Goodreads.
+<figure>
+    <img src="/tiennguyen/images/project1_eda1.jpg"/> 
+</figure>
+</p>
+<h1 id="data-modeling">Data Modeling</h1>
+<p>We decided to perform feature selection on metadata as raw attributes and on text reviews using Natural Language Processing (NLP) and Latent Dirichlet Allocation (LDA) in order to generate attributes as features for our prediction model.</p>
+<h4 id="1-machine-learning-algorithms">1. Machine Learning Algorithms</h4>
+<p>We tried 4 algorithms for our model. Recall that we have both numeric and categorical features in our datasets and want to predict the rating difference (which is numeric.)</p>
+<p>We tried multiple regression first but after checking the assumptions, we realized that the data violates the linearity and normality in errors assumptions. Due to violated assumptions, we decided not to use Multiple Regression.</p>
+<p>We also chose Random Forest, XGBoost (which is a gradient boosting tree algorithm), and Neural Network because they can handle many predictor variables, including categorical variables after encoding. These algorithms have no formal assumptions such as the ones for multiple regression. Additionally, we read from many sources that these algorithms are fairly quick and accurate, particularly Xgboost since it uses parallelization.</p>
+<p>We evaluated our models with varying metadata attributes using MAE, MSE, RMSE, and R2.</p>
+<h4 id="2-natural-language-processing-nlp">2. Natural Language Processing (NLP)</h4>
+<p>After performing text cleaning, we counted the number of words before and after cleaning text reviews for each book to use them as features in addition to metadata attributes.</p>
+<h4 id="3-latent-dirichlet-allocation-lda">3. Latent Dirichlet Allocation (LDA)</h4>
+<h5 id="how-do-we-extract-features-from-text-reviews-">How do we extract features from text reviews ?</h5>
+<p>In natural language processing, Latent Dirichlet Allocation (LDA) is a topic model generated from input text documents.</p>
+<p>We use LDA to determine how relevant each topic to each book based on its distribution of the words of the concatenated reviews. In order to do this, we use Gensim package for LDA modeling and Gensim’s Mallet wrapper to improve the quality of topics.</p>
+<p>The input to the LDA model is text reviews, and each book has the frequency of words determined from all of the reviews of that book. The output of the model is how strong each book membership to each topic. Each text review will have a certain proportion under each topic and The number of the proportion under each topic will become features to our training model.</p>
+<p>In order to evaluate the LDA model, we use the coherence score. The assumption of coherence score is that a topic is said to be coherent when its top words having high scores share a high degree of semantic similarity. Technically, the LDA model will put a weight for each of N words for all topics, and the coherence score measures the sum of the similarity measurement between the semantic interpretability and those weights.</p>
+<p>There are many methods to calculate the coherence score. The most reliable method is to use supervised labels that are labelled by humans; however, those labels are rare and hard and expensive to obtain. Luckily , there are many other methods to calculate coherence score, including UCI coherence score, UMass coherence score, and CV coherence score. CV coherence score is shown to be the most reliable, meaning it achieves the highest correlation to between its ranking and human ranked topics. Therefore, we chose to use the CV coherence score in our evaluation.</p>
+<p>LDA requires the number of topics as an input. In order to find the optimal number of topics, we performed a parameter search on a range of numbers, and evaluated each of LDA models using the coherence score. A topic is said to be coherent when its top words having high scores share a high degree of semantic similarity. Technically, the LDA model will put a weight for each of N words for all topics, and the coherence score measures the sum of the similarity measurement between the semantic interpretability and those weights. The higher the CV coherence score is, the better the quality of topics. We ran the LDA model with various numbers of topics and chose the smallest number of topics that achieves the best coherence score (i.e. the elbow method).</p>
+<figure>
+    <img src="/tiennguyen/images/project1_lda1.jpg"/> 
+</figure>
+
+<p>The optimal number of topics is 35, which has the highest score of  0.3667. Like the other tables, the LDA table has the ASIN feature along with 35 proportion topics features ( eg: prop_topic_1, prop_topic_2, etc.). We merged this table with the metadata table through ASIN.</p>
+<h3 id="4--prediction-models-without-lda-features">4.  Prediction models (without LDA features)</h3>
+<p>We started by modeling the books metadata and selecting attributes for each of the algorithms. We found that most of the numeric features are good predictors. We had to do some data cleaning such as combining the number of ratings from Goodreads and Amazon into one feature. And likewise for the number of text reviews.</p>
+<p>Since there are null values in the dataset, we tried four methods to deal with them for each of the models and compared the errors for each method in order to find the best way to deal with the missing values. First we omitted training on the null rows. Second, we replaced null values with the mean for each of the features. Third, we replaced null values with the median of each of the features. And lastly, we imputed the missing values. We found that for all methods, omitting the null rows gave us the best results since there weren’t too many null rows in our dataset.</p>
+<p>Regarding the categorical features, we one-hot encoded them and tested them on all the models and compared their train and test performance. genres was the only good one to incorporate into our model since there were too many levels for the other features such as format and publisher. These features created too many dummy variables and noise in the data that the models ended up performing worse.</p>
+<p>After features selection, we tuned hyperparameters using grid search cross validation.</p>
+<h3 id="5--prediction-models-with-lda-features">5.  Prediction models (with LDA features)</h3>
+<p>After having LDA features, we combined them with basic features and performed the three algorithms listed in section 4.2. We tested both weighted and unweighted averages of RF, NN, and XGB with cross-validation train/test split to try and improve the model performance beyond just the three individual models. We evaluated the ensembles based on MAE, MSE, RMSE, and R2 adjusted.</p>
+<h1 id="experiments-and-evaluation">Experiments and Evaluation</h1>
+<p>For our baseline, we decided to calculate the errors by predicting the mean for all books’ rating differences (it is known as Zero Rule Algorithm. It works by calculating the mean value for the observed output values.) We used this baseline to compare to our models’ errors in order to know if our prediction model is working correctly as intended. The baseline errors are as follows:</p>
+<table>
+<thead>
+<tr>
+<th>METRIC</th>
+<th>BASELINE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MAE</td>
+<td>0.2473</td>
+</tr>
+<tr>
+<td>MSE</td>
+<td>0.1124</td>
+</tr>
+<tr>
+<td>RMSE</td>
+<td>0.3353</td>
+</tr>
+<tr>
+<td>R2 Adj</td>
+<td>-0.0013</td>
+</tr>
+</tbody>
+</table>
+<p>Without text features, we found that Xgboost got the best test error rates, with MSE around 0.09. Followed by Random Forest and Neural Network.
+<figure>
+    <img src="/tiennguyen/images/project1_model1.jpg"/> 
+</figure>
+
+Although the test error of NN is slightly worse than that of RF, we thought RF performed much better since the train errors were much closer to the test errors, which meant the model was not overfitting. Like the models above, we decided to add more features from LDA in order to get better results.</p>
+<p>We incorporated the 35 LDA features into the model using both Goodreads and Amazon metadata. The features significantly improved our model performance.
+The graph on the left illustrates the different error metrics evaluated on 3 different algorithms for this model: RF, XGB, and NN. Among the metrics, XGB consistently has a lower test error rate than the other two as well as has the highest adjusted R2 value. On the other hand, NN always has the worst test errors and R2 values regardless of metrics. Therefore, XGB is the best algorithm for the model that uses Goodreads and Amazon features to predict rating differences.
+<figure>
+    <img src="/tiennguyen/images/project1_model2.jpg"/> 
+</figure>
+</p>
+<p>Despite being the best algorithm, XGB test error is still high.
+Note that the MAE test error, for example, of XHB is about 0.1837, while the mean difference is 0.4 (based on EDA), this means that, on average, the error of the prediction could be as high as 45% for each prediction. Hence, it is not reliable enough for non-experimental settings.<br>
+After knowing that XGB performed best, then followed by RF and NN, we tested out some weighted average ensembles and we came up with the best model with the formula:
+.30RF + .60XGB + .10NN which gives us the best error performance:</p>
+<table>
+<thead>
+<tr>
+<th>METRIC</th>
+<th>TRAIN ERROR</th>
+<th>TEST ERROR</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MAE</td>
+<td>0.1542</td>
+<td>0.1834</td>
+</tr>
+<tr>
+<td>MSE</td>
+<td>0.0399</td>
+<td>0.0562</td>
+</tr>
+<tr>
+<td>RMSE</td>
+<td>0.1998</td>
+<td>0.2370</td>
+</tr>
+<tr>
+<td>R2 Adj</td>
+<td>0.4779</td>
+<td>0.2353</td>
+</tr>
+</tbody>
+</table>
+<p>Overall, all of our models outperformed the baseline, which is a good sign that we created a good prediction model. However, our two best models’ RMSE came out to be 0.2370 and 0.2109, which is quite high considering that the average rating difference between Goodreads and Amazon is about 0.4 (it is half of the average rating difference!). We also took into consideration that the possible range of rating differences is [-4,4], so our RMSE is only about 3% of the possible rating differences. Additionally, the actual range of our data is [-2.78,1.99], so our RMSE is about 5% of the actual rating differences. 5% coincidentally is the cut off point we decided was a “good enough” RMSE for our models, and our models made the cut. However, if given more time and resources, we would like to improve the models and bring the RMSE down to about 1% of the range of the rating differences.</p>
+<h1 id="discussion-and-conclusion">Discussion and Conclusion</h1>
+<p>One of the strengths of Multiple Linear Regression is that its speed is fast, and it runs fast when the amount of data is large. However, the downside is that it has many assumptions. It is only efficient for linear data. Our data shows the nonlinearity, therefore linear regression can not be useful for such kind of data. We also chose Random Forest, XGBoost (which is a gradient boosting tree algorithm), and Neural Network because they can handle many predictor variables, including categorical variables after encoding. These algorithms have no formal assumptions such as the ones for multiple regression.</p>
+<p>Something that ended up being harder than we expected in our project was managing the dataset. We modified the code of preprocessing data and the training model many times, hence we had multiple copies of data. We find it challenging to keep track of the data in terms of which methods were used to process the file. Other than that, since the dataset is huge compared to our storage resource, especially when we decompressed the raw data, we often run out of memory because could not fit all data to RAM at once, and we ran out of hard drive storage because we have multiple copies of large processed data.</p>
+<p>We learned that using version control software like github is useful for managing the code base. It solved our problem of keeping track of the processed file as discussed above. We also learned to implement the LDA model and to fine tune its parameter. The most surprising part of our project is that even though it has millions of reviews and a magnitude of ten thousands of books, the optimal number of topics to cluster them is surprisingly low (35), and this low number of topics is a relief for our limited computing resources as the lower number of topics, the smaller input size to our prediction models.</p>
+<p>The majority of challenges we faced in this project was conducting experiments with limited computing resources and working with a small amount of data (compared to the input to state-of-the-art deep learning models). If we were in charge of more computing resources and a large amount of dataset from Goodreads, Amazon and other book reviewing websites, we would like to investigate the effectiveness of pretrained BERT, MegatronLM and T-NLG along with a deep neural network for the task of predicting the rating differences between any two websites.</p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "tiennguyen" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      
+      <div id="commento"></div>
+<script defer src="https://cdn.commento.io/js/commento.js"></script>
+
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://4tiennguyen.github.io/tiennguyen/" >
+    &copy;  Home 2024 
+  </a>
+    <div>
+
+
+
+
+
+
+
+<a href="https://www.linkedin.com/in/tien-nguyen-8ba4b81b4/" target="_blank" class="link-transition linkedin link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" rel="noopener" aria-label="follow on LinkedIn——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+<a href="https://github.com/4tiennguyen" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/tiennguyen/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>
