@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <!-- Bootstrap CSS CDN -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    
+
+    rel="stylesheet"
+  />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- AOS CSS -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<!-- Font Awesome CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-XwEiK6t+RyJQPLF0Fe4AGTLcGjD7fC8uvyJzLkNeFCsWwvqrgP8rhBozEo9X2Ke8zZWrTxlg7MeiPQFG9akxZg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+
+  <style>
+    .card-img-top {
+      height: 200px;
+      object-fit: cover;
+    }
+  
+    .card-body .badge {
+      margin-right: 5px;
+      margin-bottom: 5px;
+    }
+  
+    .card-body {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  
+    .card-footer {
+      padding-top: 0;
+      margin-top: auto;
+    }
+    .back-to-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        z-index: 999;
+        width: 48px;
+        height: 48px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2rem;
+        }
+
+    
+  </style>
+ <style>
+    .skill-icon {
+      font-size: 1.6rem;
+      padding: 0.5rem;
+      border-radius: 0.5rem;
+      background-color: #f8f9fa;
+      color: #0d6efd;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+  
+    .skill-icon:hover {
+      transform: scale(1.2);
+      box-shadow: 0 4px 12px rgba(0, 123, 255, 0.2);
+    }
+  
+    .skill-label {
+      font-size: 0.9rem;
+      margin-top: 0.25rem;
+      color: #333;
+    }
+  
+    .skill-item {
+      width: 80px;
+      text-align: center;
+    }
+    html {
+  scroll-behavior: smooth;
+}
+
+  </style>
+   
+  
+</head>
+<body>
+  <!-- We'll add your content here -->
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+          <a class="navbar-brand" href="#">MyPortfolio</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link active" href="#home">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#about">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#experience">Experience</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#projects">Projects</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#skills">Skills</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="blog.html">Blog</a>
+              </li>
+              
+            </ul>
+          </div>
+        </div>
+      </nav>
+      
+<!-- Hero Section with Profile Image -->
+<section class="py-5 bg-light text-center">
+    <div class="container">
+      <img src=".\images\About\avata.jpg" alt="Profile Picture" class="rounded-circle mb-4" width="450" height="450" />
+      <h1 class="display-4 fw-bold">Hi, I'm Tien Nguyen</h1>
+      <p class="lead mb-4">A passionate [Your Role] creating impactful digital experiences.</p>
+      <!-- Resume Button (optional) -->
+      <a href=".\images\TienNguyen_Resume.pdf" class="btn btn-primary" target="_blank">
+        <i class="fa-solid fa-file-arrow-down me-2"></i>Download Résumé
+      </a>
+      <!-- <a href="#projects" class="btn btn-primary btn-lg">View My Work</a> -->
+    </div>
+  </section>
+
+
+  <!-- About Me Section -->
+<section id="about" class="py-5">
+    <div class="container">
+      <h2 class="mb-4 text-center">About Me</h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <p>Hi, I’m <strong>Tien Nguyen</strong>. I recently graduated with a <span class="fw-bold text-primary">Master of Science in Data Science</span> from <span class="fw-bold text-secondary">San Jose State University</span>. I also hold a <span class="fw-bold text-primary">B.S. degree in Data Science</span> from <span class="text-secondary fw-bold">UC Irvine</span> and an <span class="fw-bold text-primary">A.S. degree in Computer Science</span> from <span class="text-secondary fw-bold">De Anza College</span>.</p>
+  
+          <p>My career has been defined by leveraging advanced analytics and machine learning to solve complex problems across different domains. Currently, I am a <span class="fw-bold text-success">Research Analyst at NASA Ames Research Center</span>, where I developed a game theory-based model for managing airspace — recognized for its innovation at the <span class="text-info">Digital Avionics Systems Conference</span>.</p>
+  
+          <p>Previously, as a <span class="fw-bold text-success">Research Analyst at SJSU</span>, I led projects in deception detection and multimodal emotion detection, applying deep learning techniques to uncover subtle patterns in data. My work in deception detection led to a publication at the <span class="text-info">COMPSAC 2024 conference</span>, where I was the first author.</p>
+  
+          <p>I also interned as a <span class="fw-bold text-success">Data Scientist at Tesla</span>, refining data workflows using <strong>SQL</strong> and <strong>Python</strong>. My collaboration with cross-functional teams produced over 40 <strong>Tableau dashboards</strong>, providing critical insights for stakeholders.</p>
+  
+          <p>I really enjoy working with data. As data becomes more plentiful, its potential for impact grows. But with this potential comes the challenge of data quality and computing efficiency. Despite these challenges, I find it exciting to extract meaningful insights using both engineering and statistical tools.</p>
+  
+          <p>Throughout college, I used <strong>SQL</strong> for querying and analysis, and statistical models in <strong>R</strong> and <strong>Python</strong> for handling diverse datasets. My favorite part? Cleaning data — I get a strange satisfaction from transforming messy datasets. It's kind of like vacuuming a very dirty surface!</p>
+  
+          <p>In my free time, I love making DIY projects. I enjoy being creative and making things my own way.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Experience Section - Clean Layout, No Dots -->
+<section id="experience" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="mb-5 text-center">Experience</h2>
+  
+      <!-- NASA -->
+      <div class="mb-5">
+        <h5 class="fw-bold mb-0">NASA Ames Research Center</h5>
+        <div class="d-flex justify-content-between flex-wrap">
+          <em>Research Analyst</em>
+          <em class="text-muted">Mountain View, CA | Jan 2024 – Present</em>
+        </div>
+        <ul class="mt-2">
+          <li>Developed a Python-based game theory negotiation model for aircraft routing in both two-party and multi-party scenarios.</li>
+          <li>Ran 300+ combinatorial simulations and created visualizations to assess efficiency and conflict resolution.</li>
+          <li>Reduced conflict resolution distances by 25% through negotiated solutions.</li>
+          <li>Presented at DASC 2024; awarded 2nd place Best of Conference.</li>
+        </ul>
+      </div>
+  
+      <!-- Tesla (2023–2024) -->
+      <div class="mb-5">
+        <h5 class="fw-bold mb-0">Tesla, Inc.</h5>
+        <div class="d-flex justify-content-between flex-wrap">
+          <em>Data Science Intern</em>
+          <em class="text-muted">Sparks, NV | Jul 2023 – Jan 2024</em>
+        </div>
+        <ul class="mt-2">
+          <li>Built ELT pipelines reducing data processing time from 1.5 hours to 1 minute.</li>
+          <li>Created content quality reports and parsed course data from 4 sources using Python and SQL.</li>
+          <li>Managed 40+ Tableau dashboards, driving insights for stakeholders.</li>
+          <li>Used Git and Jira for collaboration and version control.</li>
+        </ul>
+      </div>
+  
+      <!-- SJSU -->
+      <div class="mb-5">
+        <h5 class="fw-bold mb-0">San Jose State University</h5>
+        <div class="d-flex justify-content-between flex-wrap">
+          <em>Research Analyst</em>
+          <em class="text-muted">San Jose, CA | Feb 2023 – Dec 2024</em>
+        </div>
+        <ul class="mt-2">
+          <li>Built and validated a deception detection system using text and audio data via advanced NLP, machine learning, and
+            deep learning models (BiLSTM, ResNet50, and pre-trained transformers).</li>
+          <li>Implemented a late fusion model in Python that combined text and audio modalities, achieving 90.9% accuracy and 91.07% F1 score, outperforming existing benchmarks.</li>
+          <li>Published the work as first author at COMPSAC 2024.</li>
+        </ul>
+      </div>
+  
+      <!-- Tesla (2022–2023) -->
+      <div class="mb-2">
+        <h5 class="fw-bold mb-0">Tesla, Inc.</h5>
+        <div class="d-flex justify-content-between flex-wrap">
+          <em>Data Science Intern</em>
+          <em class="text-muted">Sparks, NV | Aug 2022 – Jan 2023</em>
+        </div>
+        <ul class="mt-2">
+          <li>Developed 30+ Tableau dashboards to automate reporting.</li>
+          <li>Built modular Python ETLs to streamline onboarding and handoffs.</li>
+          <li>Created a Flask onboarding portal using SQLAlchemy and Jinja2.</li>
+          <li>Improved metric accuracy by 10% through dashboard logic fixes.</li>
+        </ul>
+      </div>
+  
+    </div>
+  </section>
+  
+<!-- Projects Section -->
+<section id="projects" class="py-5">
+    <div class="container">
+      <h2 class="mb-5 text-center">Projects</h2>
+  
+      <div class="row g-4">
+  
+        <!-- Multimodal Deception Detection -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm">
+            <img src="./images/project10_bg.jpg" class="card-img-top" alt="Multimodal Deception Detection" />
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Multimodal Deception Detection</h5>
+              <p class="card-text">Detected deception using text + audio via BiLSTM, ResNet50, and LLMs. Published at COMPSAC 2024.</p>
+              <div class="mt-auto">
+                <div class="mt-3">
+                  <span class="badge bg-primary">Python</span>
+                  <span class="badge bg-secondary">NLP</span>
+                  <span class="badge bg-success">Deep Learning</span>
+                  <span class="badge bg-info text-dark">Multimodal</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer bg-transparent border-0">
+              <a href="https://github.com/4tiennguyen/Multimodal-Deception-Detection" class="btn btn-outline-primary btn-sm" target="_blank">View Project</a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Banking System -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm">
+            <img src="./images/project9_bg.png" class="card-img-top" alt="Banking System" />
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Banking System</h5>
+              <p class="card-text">Built a banking transaction system following ACID principles to ensure financial data integrity.</p>
+              <div class="mt-auto">
+                <div class="mt-3">
+                    <span class="badge bg-primary">Python</span>
+                  <span class="badge bg-primary">MySQL</span>
+                  <span class="badge bg-primary">Database Design</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer bg-transparent border-0">
+              <a href="https://github.com/4tiennguyen/Banking_System" class="btn btn-outline-primary btn-sm" target="_blank">View Project</a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Online Novel Recommendation -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm">
+            <img src="./images/project8_bg.png" class="card-img-top" alt="Online Novel Recommendation" />
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Online Novel Recommendation</h5>
+              <p class="card-text">Designed a recommender system for novel platforms using user interaction data.</p>
+              <div class="mt-auto">
+                <div class="mt-3">
+                    <span class="badge bg-primary">Python</span>
+                  <span class="badge bg-info text-dark">Recommender</span>
+                  <span class="badge bg-secondary">Data Mining</span>
+                  <span class="badge bg-success">User Behavior</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer bg-transparent border-0">
+              <a href="https://github.com/4tiennguyen/Online_Novel_Recommendation" class="btn btn-outline-primary btn-sm" target="_blank">View Project</a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Extractive Text Summarization -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm">
+            <img src="./images/project7_bg.png" class="card-img-top" alt="Text Summarization" />
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Extractive Text Summarization</h5>
+              <p class="card-text">Used fuzzy logic + neural networks to summarize BBC text dataset efficiently.</p>
+              <div class="mt-auto">
+                <div class="mt-3">
+                    <span class="badge bg-primary">Python</span>
+                  <span class="badge bg-secondary">NLP</span>
+                  <span class="badge bg-info text-dark">Data Cleaning</span>
+                  <span class="badge bg-success">Machine Learning</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer bg-transparent border-0">
+              <a href="https://github.com/4tiennguyen/Extractive_Text_Summarization" class="btn btn-outline-primary btn-sm" target="_blank">View Project</a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- PAWsitive Dog Care DB -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm">
+            <img src="./images/project4_dogbg.jpg" class="card-img-top" alt="Dog Care DB Design" />
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">PAWsitive Dog Care DB</h5>
+              <p class="card-text">Designed conceptual, logical, and physical database models for a dog daycare business.</p>
+              <div class="mt-auto">
+                <div class="mt-3">
+                    <span class="badge bg-primary">Python</span>
+                  <span class="badge bg-success">Database Design</span>
+                  <span class="badge bg-warning text-dark">ERD</span>
+                  <span class="badge bg-secondary">SQL</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer bg-transparent border-0">
+              <a href="https://github.com/4tiennguyen/PAWsitive_dogCare" class="btn btn-outline-primary btn-sm" target="_blank">View Project</a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Book Rating Prediction -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm">
+            <img src="./images/project1_bookcover.jpg" class="card-img-top" alt="Book Rating Prediction" />
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Book Rating Prediction</h5>
+              <p class="card-text">Cleaned large datasets from Amazon & Goodreads. Used multiprocessing and LDA for prediction.</p>
+              <div class="mt-auto">
+                <div class="mt-3">
+                    <span class="badge bg-primary">Python</span>
+                  <span class="badge bg-success">Data Visualization</span>
+                  <span class="badge bg-success">Machine Learning</span>
+                  <span class="badge bg-info text-dark">Data Cleaning</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer bg-transparent border-0">
+              <a href="https://github.com/4tiennguyen/Book_Rating_Prediction" class="btn btn-outline-primary btn-sm" target="_blank">View Project</a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Datacamp Projects -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm">
+            <img src="./images/datacamp.jpg" class="card-img-top" alt="Datacamp Projects" />
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Datacamp Projects</h5>
+              <p class="card-text">Credit card approval models and police behavior analysis using real-world data.</p>
+              <div class="mt-auto">
+                <div class="mt-3">
+                    <span class="badge bg-primary">Python</span>
+                  <span class="badge bg-primary">Classification</span>
+                  <span class="badge bg-success">Data Visualization</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer bg-transparent border-0">
+              <a href="https://github.com/4tiennguyen/Datacamp_project" class="btn btn-outline-primary btn-sm" target="_blank">View Projects</a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Google Play Store App Analysis -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm">
+            <img src="./images/project5_bg.png" class="card-img-top" alt="Google Play Store Analysis" />
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Google Play Store App Analysis</h5>
+              <p class="card-text">Analyzed app data from Google Play Store to identify patterns and trends.</p>
+              <div class="mt-auto">
+                <div class="mt-3">
+                  <span class="badge bg-primary">Matlab</span>
+                  <span class="badge bg-info text-dark">EDA</span>
+                  <span class="badge bg-success">Data Visualization</span>
+                  <span class="badge bg-primary">Data Cleaning</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer bg-transparent border-0">
+              <a href="https://github.com/4tiennguyen/googleApps-visualization" class="btn btn-outline-primary btn-sm" target="_blank">View Project</a>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  
+<!-- Skills Section with Animated Icons -->
+<section id="skills" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="mb-5 text-center">Skills</h2>
+  
+      <div class="row g-5 text-center justify-content-center">
+  
+        <!-- Languages & Tools -->
+        <div class="col-md-4">
+          <h5 class="text-primary mb-4">Languages & Tools</h5>
+          <div class="d-flex flex-wrap justify-content-center gap-4">
+            <div class="skill-item" data-aos="zoom-in">
+              <i class="bi bi-filetype-py skill-icon"></i>
+              <div class="skill-label">Python</div>
+            </div>
+            <div class="skill-item" data-aos="zoom-in" data-aos-delay="100">
+              <i class="bi bi-database-fill-gear skill-icon"></i>
+              <div class="skill-label">SQL</div>
+            </div>
+            <div class="skill-item" data-aos="zoom-in" data-aos-delay="200">
+              <i class="bi bi-calculator-fill skill-icon"></i>
+              <div class="skill-label">MATLAB</div>
+            </div>
+            <div class="skill-item" data-aos="zoom-in" data-aos-delay="300">
+              <i class="bi bi-file-earmark-code-fill skill-icon"></i>
+              <div class="skill-label">R</div>
+            </div>
+            <div class="skill-item" data-aos="zoom-in" data-aos-delay="400">
+              <i class="bi bi-git skill-icon"></i>
+              <div class="skill-label">Git</div>
+            </div>
+            <div class="skill-item" data-aos="zoom-in" data-aos-delay="500">
+              <i class="bi bi-journal-code skill-icon"></i>
+              <div class="skill-label">Jupyter</div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Databases -->
+        <div class="col-md-4">
+          <h5 class="text-primary mb-4">Databases</h5>
+          <div class="d-flex flex-wrap justify-content-center gap-4">
+            <div class="skill-item" data-aos="fade-up">
+              <i class="bi bi-database-fill skill-icon"></i>
+              <div class="skill-label">MySQL</div>
+            </div>
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="100">
+              <i class="bi bi-server skill-icon"></i>
+              <div class="skill-label">PostgreSQL</div>
+            </div>
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="200">
+              <i class="bi bi-cloud-fill skill-icon"></i>
+              <div class="skill-label">MongoDB</div>
+            </div>
+            <div class="skill-item" data-aos="fade-up" data-aos-delay="300">
+              <i class="bi bi-hdd-network skill-icon"></i>
+              <div class="skill-label">Vertica</div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Additional Skills -->
+        <div class="col-md-4">
+          <h5 class="text-primary mb-4">Additional Skills</h5>
+          <div class="d-flex flex-wrap justify-content-center gap-4">
+            <div class="skill-item" data-aos="fade-down">
+              <i class="bi bi-bar-chart-fill skill-icon"></i>
+              <div class="skill-label">Tableau</div>
+            </div>
+            <div class="skill-item" data-aos="fade-down" data-aos-delay="100">
+              <i class="bi bi-file-earmark-excel-fill skill-icon"></i>
+              <div class="skill-label">Excel</div>
+            </div>
+            <div class="skill-item" data-aos="fade-down" data-aos-delay="200">
+              <i class="bi bi-cpu-fill skill-icon"></i>
+              <div class="skill-label">Machine Learning</div>
+            </div>
+            <div class="skill-item" data-aos="fade-down" data-aos-delay="300">
+              <i class="bi bi-robot skill-icon"></i>
+              <div class="skill-label">Deep Learning</div>
+            </div>
+
+            <div class="skill-item" data-aos="fade-down" data-aos-delay="400">
+            <i class="fa-solid fa-language skill-icon"></i>
+            <div class="skill-label">NLP</div>
+            </div>
+
+            <div class="skill-item" data-aos="fade-down" data-aos-delay="500">
+            <i class="fa-solid fa-chart-line skill-icon"></i>
+            <div class="skill-label">Predictive</div>
+            </div>
+
+            <div class="skill-item" data-aos="fade-down" data-aos-delay="600">
+            <i class="fa-solid fa-chart-bar skill-icon"></i>
+            <div class="skill-label">Visualization</div>
+            </div>
+
+            <div class="skill-item" data-aos="fade-down" data-aos-delay="700">
+            <i class="fa-solid fa-flask skill-icon"></i>
+            <div class="skill-label">Research</div>
+            </div>
+
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  
+  
+  <!-- Contact Section -->
+<section id="contact" class="py-5">
+    <div class="container text-center">
+      <h2 class="mb-4">Let's Connect</h2>
+      <p class="mb-4">Feel free to reach out for collaboration or just a friendly hello 👋</p>
+  
+      <div class="d-flex justify-content-center flex-wrap gap-4 mb-4">
+  
+        <!-- Email -->
+        <a href="mailto:tttienguyen@gmail.com" class="text-decoration-none">
+          <i class="fa-solid fa-envelope fa-lg me-2 text-primary"></i>tiennguyen.ds@gmail.com
+        </a>
+  
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/4tiennguyen" target="_blank" class="btn btn-outline-primary btn-sm">
+          <i class="fa-brands fa-linkedin me-1"></i> LinkedIn
+        </a>
+  
+        <!-- GitHub -->
+        <a href="https://github.com/4tiennguyen" target="_blank" class="btn btn-outline-dark btn-sm">
+          <i class="fa-brands fa-github me-1"></i> GitHub
+        </a>
+  
+      </div>
+  
+      <!-- Resume Button (optional) -->
+      <a href=".\images\TienNguyen_Resume.pdf" class="btn btn-primary" target="_blank">
+        <i class="fa-solid fa-file-arrow-down me-2"></i>Download Résumé
+      </a>
+    </div>
+  </section>
+  
+  
+  
+  <!-- ⬆️ Back to Top Button -->
+<a href="#" class="btn btn-primary rounded-circle shadow back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
+    
+  <!-- Bootstrap JS Bundle (includes Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800, // Animation duration in ms
+    once: true     // Only animate once per scroll
+  });
+</script>
+
+</body>
+</html>

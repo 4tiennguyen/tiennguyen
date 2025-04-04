@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DIY Projects | Tien's Blog</title>
+
+  <!-- Bootstrap + Fonts -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Lightbox2 CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet" />
+
+  <!-- AOS Animation -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <style>
+    body {
+      background: url('../images/blog_bg.png') no-repeat center center fixed;
+      background-size: cover;
+      color: #333;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .container {
+      max-width: 1000px;
+    }
+
+    .handwriting {
+      font-family: 'Architects Daughter', cursive;
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    h1 {
+      font-weight: bold;
+      font-size: 2rem;
+    }
+
+    img {
+      border-radius: 0.75rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+      max-width: 100%;
+      height: auto;
+    }
+
+    .back-link {
+      font-size: 0.9rem;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+
+    .back-to-top {
+      bottom: 30px;
+      right: 30px;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container py-5">
+
+    <a href="../blog.html" class="text-decoration-none text-muted back-link">&larr; Back to Blog</a>
+
+    <h1 class="mb-4 text-center">My DIY Projects 🛠️</h1>
+
+    <!-- ✨ Fade-in Intro -->
+    <div class="handwriting mb-5" data-aos="fade-in" data-aos-duration="1000">
+      <p>
+        Since I came to the U.S., I found joy in making things by hand.  
+        It’s a peaceful, fulfilling experience to create something from scratch  
+        and see it come to life — from handmade decor to duct-taped chairs to cozy spaces.  
+        These projects became little reflections of who I am.
+      </p>
+    </div>
+
+    <!-- Masonry-style layout -->
+    <div class="row row-cols-1 row-cols-md-2 g-4" data-masonry='{"percentPosition": true }'>
+
+      <!-- Wallet -->
+      <div class="col" data-aos="fade-up">
+        <div class="handwriting">
+          <p><strong>The Wallet</strong><br>I got a lot of compliments.</p>
+          <a href="../images/wallet.gif" data-lightbox="diy-gallery" data-title="The Wallet – I got a lot of compliments 💼">
+            <img src="../images/wallet.gif" alt="DIY Wallet" />
+          </a>
+        </div>
+      </div>
+
+      <!-- Chair -->
+      <div class="col" data-aos="fade-up" data-aos-delay="100">
+        <div class="handwriting">
+          <p><strong>The Chair</strong><br>After buying a desk, I used the box and duct tape to make a chair. It lasted all year 😆</p>
+          <a href="../images/chair.gif" data-lightbox="diy-gallery" data-title="The Chair – Made from a box and duct tape 😆">
+            <img src="../images/chair.gif" alt="DIY Chair" />
+          </a>
+        </div>
+      </div>
+
+      <!-- Makeup -->
+      <div class="col" data-aos="fade-up" data-aos-delay="200">
+        <div class="handwriting">
+          <p><strong>The Makeup Organizer</strong></p>
+          <a href="../images/makeup.jpg" data-lightbox="diy-gallery" data-title="The Makeup Organizer 💄">
+            <img src="../images/makeup.jpg" alt="Makeup Organizer" />
+          </a>
+        </div>
+      </div>
+
+      <!-- Corner -->
+      <div class="col" data-aos="fade-up" data-aos-delay="300">
+        <div class="handwriting">
+          <p><strong>My Little Corner</strong></p>
+          <a href="../images/little_corner.jpg" data-lightbox="diy-gallery" data-title="My Cozy Corner ✨">
+            <img src="../images/little_corner.jpg" alt="Cozy corner" />
+          </a>
+        </div>
+      </div>
+
+      <!-- Desk -->
+      <div class="col" data-aos="fade-up" data-aos-delay="400">
+        <div class="handwriting">
+          <p><strong>My Desk @ Tesla</strong></p>
+          <a href="../images/workdesk.jpg" data-lightbox="diy-gallery" data-title="My Desk at Tesla 🚗">
+            <img src="../images/workdesk.jpg" alt="Tesla Desk" />
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Outro -->
+    <div class="handwriting mt-4" data-aos="fade-up" data-aos-delay="500">
+      <p>
+        Every project taught me something — not just about crafting, but about patience, resourcefulness, and enjoying the process.
+        These creations reflect my love for problem-solving, designing, and making my space feel like home 💛
+      </p>
+    </div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <a href="#" class="btn btn-primary rounded-circle shadow position-fixed back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+
+  <script>
+    AOS.init({ duration: 800, once: true });
+
+    // Smooth scroll to top
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
+  </script>
+
+</body>
+</html>
